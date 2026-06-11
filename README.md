@@ -6,10 +6,12 @@ Public portfolio of 12-day AI Trainer Workshop. By Day 12: 6 daily notebooks + c
 
 - Google AI Studio API key provisioned
 - Groq API key provisioned
-- Hello-Gemini call working - see [Day1_Setup.ipynb](Day1_Setup.ipynb)
-- 4-tool comparison matrix from Lab 1A: see screenshot below
+- Hello-Gemini call working - see [Day1_Setup_1B.ipynb](Day-1/Day1_Setup_1B.ipynb)
+- 4-tool comparison matrix from Lab 1A - see [lab-1A.md](Day-1/lab-1A.md)
 
-![Gemini first call](gemini_first_call.png)
+![Gemini first call](Day-1/gemini_first_call.png)
+
+### Tool Preference Notes
 
 I would use ChatGPT for general tasks where I need a fast, well-structured response.
 
@@ -18,3 +20,15 @@ I would use Claude for long documents, careful reasoning, and high-stakes writin
 I would use Perplexity for any factual claim I cannot afford to get wrong.
 
 I would use Gemini when I need strong integration with Google's ecosystem, multimodal tasks, or help working across Google services such as Docs, Gmail, Drive, and Search.
+
+## Day 2 - Prompt patterns and resume extraction
+
+- Resume extractor notebook - see [Day2_ResumeExtractor.ipynb](Day-2/Day2_ResumeExtractor.ipynb)
+- Six prompt patterns lab using Docker interview explanations - see [lab-1A.md](Day-2/lab-1A.md)
+
+Prompt patterns practiced:
+
+- Persona
+- Few-shot
+- Chain of thought
+- Structured output

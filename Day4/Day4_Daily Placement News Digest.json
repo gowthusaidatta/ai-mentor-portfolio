@@ -1,0 +1,122 @@
+{
+  "name": "Daily Placement News Digest",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "53d421b5-b8b5-4acd-9fe8-27657d3a7831",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "=https://www.naukri.com/blog/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "57e46489-add9-4649-a48d-0927ad1d702c",
+      "name": "RSS Read"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ba390654-c4f7-4dbf-9dfd-9152db72e9ad",
+              "name": "digest",
+              "value": "• AI hiring demand continues to grow. • Cloud and DevOps skills remain highly valued. • Companies are investing heavily in GenAI initiatives. • Placement preparation should focus on aptitude and coding. • Students should strengthen project portfolios and certifications.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        368,
+        0
+      ],
+      "id": "f80c86cd-8464-40fa-ab9b-a1ee9b1fdd3d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "fromEmail": "saidattagowthu@gmail.com",
+        "toEmail": "saidattagowthu@gmail.com",
+        "subject": "Placement News Digest",
+        "emailFormat": "both",
+        "text": "=Good morning.\n\nToday's placement digest:\n\n{{ $json.digest }}\n\nSent automatically by n8n.",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        576,
+        0
+      ],
+      "id": "214fd523-b5ce-4422-a1b1-92c6847f18d9",
+      "name": "Send an Email",
+      "webhookId": "09341416-b56a-476f-be3c-7bb9833eaf25",
+      "credentials": {
+        "smtp": {
+          "id": "KOPuyYtU0HrPNLaF",
+          "name": "SMTP account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send an Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "7c0577d7-ce3b-4944-9f24-2d1ba59a3f80",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "69bb1d8254d97522fa120b3c7b02960daf644d82154da28da2ef5a9f3260def0"
+  },
+  "nodeGroups": [],
+  "id": "ytQeGKSY5BJsIMzC",
+  "tags": []
+}

@@ -11,30 +11,16 @@
 ## Prompt
 
 ```text
-You are a senior DevOps Trainer who has trained 500+ B.Tech CSE students for cloud and DevOps interviews. A 3rd-year engineering student preparing for TCS, Infosys, Accenture, and Cognizant asks you about Docker.
-
-Explain Docker the way you would in a 1-on-1 placement preparation session. Keep it conversational, practical, and interview-focused.
+"You are a senior placement coach at Aditya University. You have prepared 200 B.Tech CSE students for TCS, Infosys, and Cognizant placement interviews. A 3rd-year CSE student with 7.5 CGPA asks you about Big-O notation. Explain it the way you would in a 1-on-1 prep session — concrete, conversational, exam-relevant."
 ```
 
 ## Output
 
-Alright, let's make Docker simple.
+Big-O notation is nothing but a way to describe how your algorithm behaves as input grows. It's not about actual time in milliseconds — it's about the pattern of growth. That's the one-line definition I want you to memorize for TCS and Infosys interviews.
 
-Imagine you've developed a Java application on your laptop. It works perfectly. But when you deploy it on a server, it fails because the server has different software versions or missing dependencies.
+Think of it this way: if your array has 10 elements, your code runs fine. But what happens when TCS's interviewer says "what if the input is 10 million records?" — that's where Big-O matters.
 
-Docker solves this problem.
-
-Think of Docker as a sealed lunch box. Inside the box, you pack your application, libraries, dependencies, and configurations. Wherever you carry that lunch box, the contents remain the same.
-
-In Docker, this lunch box is called a **Container**.
-
-Key terms you should know:
-
-* Docker Engine
-* Docker Image
-* Docker Container
-* Dockerfile
-* Docker Hub
+Let me show you the 6 complexities that appear 90% of the time in placement tests, with the exact mental images I teach every student:
 
 ### Power Answer
 

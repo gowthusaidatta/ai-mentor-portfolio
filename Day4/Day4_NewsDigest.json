@@ -2,19 +2,8 @@
   "name": "Daily Placement News Digest",
   "nodes": [
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        0,
-        0
-      ],
-      "id": "53d421b5-b8b5-4acd-9fe8-27657d3a7831",
-      "name": "When clicking ‘Execute workflow’"
-    },
-    {
       "parameters": {
-        "url": "=https://www.naukri.com/blog/feed/",
+        "url": "=https://news.ycombinator.com/rss",
         "options": {}
       },
       "type": "n8n-nodes-base.rssFeedRead",
@@ -73,21 +62,30 @@
           "name": "SMTP account"
         }
       }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6e18b89e-4d07-4568-8d4f-cc3e463699bb",
+      "name": "Schedule Trigger"
     }
   ],
   "pinData": {},
   "connections": {
-    "When clicking ‘Execute workflow’": {
-      "main": [
-        [
-          {
-            "node": "RSS Read",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "RSS Read": {
       "main": [
         []
@@ -111,7 +109,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "7c0577d7-ce3b-4944-9f24-2d1ba59a3f80",
+  "versionId": "98a7cf1c-81d8-4eef-9bb5-902d552be337",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "69bb1d8254d97522fa120b3c7b02960daf644d82154da28da2ef5a9f3260def0"
